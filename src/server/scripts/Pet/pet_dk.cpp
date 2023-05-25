@@ -149,6 +149,7 @@ public:
             RemoveTargetAura();
 
             // Stop Fighting
+			me->CastStop();
             me->CombatStop(true);
             me->ApplyModFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE, true);
 
