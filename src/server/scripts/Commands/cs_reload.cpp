@@ -449,7 +449,12 @@ public:
     static bool HandleReloadCreatureTemplateCommand(ChatHandler* handler, std::string_view args)
     {
         if (args.empty())
-            return false;
+            { 
+			sLog->outString("Re-Loading Creature templates...");
+            sObjectMgr->LoadCreatureTemplates();
+            handler->SendGlobalGMSysMessage("DB table `Creature_template` reloaded.");
+            return true;
+			}
 
         for (std::string_view entryStr : Acore::Tokenize(args, ' ', false))
         {
