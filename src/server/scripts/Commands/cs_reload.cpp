@@ -450,7 +450,7 @@ public:
     {
         if (args.empty())
             { 
-			sLog->outString("Re-Loading Creature templates...");
+			LOG_INFO("Re-Loading Creature templates...");
             sObjectMgr->LoadCreatureTemplates();
             handler->SendGlobalGMSysMessage("DB table `Creature_template` reloaded.");
             return true;
