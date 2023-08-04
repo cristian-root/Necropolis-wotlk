@@ -62,47 +62,11 @@ public:
             return false;
 
         std::string name("Console");
-		std::string rank("Console");
         if (WorldSession* session = handler->GetSession())
-		{
             name = session->GetPlayer()->GetName();
-			switch (session->GetSecurity())
-            {
-            case SEC_MODERATOR:
-                rank = "|cff00ccff[GM - Atención]|r";
-                break;
-            case SEC_GAMEMASTER:
-                rank = "|cff00ccff[GM - Eventos]|r";
-                break;
-            case SEC_GAMEMASTER1:
-                rank = "|cff00ccff[GM - Soporte]|r";
-                break;
-            case SEC_GAMEMASTER4:
-                rank = "|cff00ccff[GM - Soporte]|r";
-                break;
-            case SEC_GAMEMASTER5:
-                rank = "|cff00ccff[GM - Moderador]|r";
-                break;
-            case SEC_GAMEMASTER6:
-                rank = "|cff00ccff[GM - Gran Maestro]|r";
-                break;
-            case SEC_GAMEMASTER7:
-                rank = "|cff00ccff[GM - Sub Administrador]|r";
-                break;
-            case SEC_ADMINISTRATOR:
-                rank = "|cffff0000[Administrator]|r";
-                break;
-            case SEC_CONSOLE:
-                rank = "|cff00ccff[]|r";
-                break;
-            }
-        }
 
-        std::ostringstream stream;
-
-        stream << " " << rank.c_str() << " " << name.c_str();
-
-        sWorld->SendWorldText(LANG_ANNOUNCE_COLOR, stream.str().c_str(), args);
+        sWorld->SendWorldText(LANG_ANNOUNCE_COLOR, name.c_str(), message.data());
+        return true;
     }
 
     static bool HandleGMNameAnnounceCommand(ChatHandler* handler, Tail message)

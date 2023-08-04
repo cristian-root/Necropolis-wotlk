@@ -63,16 +63,11 @@ constexpr auto IN_MILLISECONDS = 1000;
 
 enum AccountTypes
 {
-	SEC_PLAYER         = 0,                 // NORMAL PLAYER
-    SEC_GAMEMASTER1    = 1,                 // GM RANK 1
-    SEC_MODERATOR      = 2,                 // GM RANK 2
-    SEC_GAMEMASTER     = 3,                 // GM RANK 3
-    SEC_GAMEMASTER4    = 4,                 // GM RANK 4
-    SEC_GAMEMASTER5    = 5,                 // GM RANK 5
-    SEC_GAMEMASTER6    = 6,                 // GM RANK 6
-    SEC_GAMEMASTER7    = 7,                 // GM RANK 7
-    SEC_ADMINISTRATOR  = 8,                 // ADMINISTRATOR
-    SEC_CONSOLE        = 9                  // must be always last in list, accounts must have less security level always also
+    SEC_PLAYER         = 0,
+    SEC_MODERATOR      = 1,
+    SEC_GAMEMASTER     = 2,
+    SEC_ADMINISTRATOR  = 3,
+    SEC_CONSOLE        = 4                                  // must be always last in list, accounts must have less security level always also
 };
 
 enum LocaleConstant
